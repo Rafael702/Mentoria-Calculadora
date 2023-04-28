@@ -2,13 +2,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        //Metodos nao estaticos precisam que sua class seja instanciada para serem usados dentro de um metodo static
+        Main main = new Main();
+        main.calcular();
     }
-
     public void calcular(){
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Qual operacao matematica voce deseja realizar?");
+        System.out.println("Escolha a operacao matematica que voce deseja realizar?");
         System.out.println("+: Adicao");
         String operacaoMatematica = scanner.next();
 
@@ -21,10 +22,10 @@ public class Main {
         int segundoNumero = scanner.nextInt();
 
         int resultado = 0;
-        if(operacaoMatematica == "+"){
+        if(operacaoMatematica.equals("+")){
          resultado =  primeiroNumero + segundoNumero;
         }
 
-        System.out.println(resultado);
+        System.out.println("O resultado é: " + resultado);
     }
 }
