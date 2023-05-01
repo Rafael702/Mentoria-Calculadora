@@ -6,11 +6,13 @@ public class Main {
         Main main = new Main();
         main.calcular();
     }
-    public void calcular(){
+
+    public void calcular() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Escolha a operacao matematica que voce deseja realizar?");
         System.out.println("+: Adicao");
+        System.out.println("-: Subtracao");
         String operacaoMatematica = scanner.next();
 
         System.out.println("Operacao escolhida: " + operacaoMatematica);
@@ -22,8 +24,15 @@ public class Main {
         int segundoNumero = scanner.nextInt();
 
         int resultado = 0;
-        if(operacaoMatematica.equals("+")){
-         resultado =  primeiroNumero + segundoNumero;
+        if (operacaoMatematica.equals("+")) {
+            resultado = primeiroNumero + segundoNumero;
+        }
+        if (operacaoMatematica.equals("-")) {
+            if (primeiroNumero > segundoNumero) {
+                resultado = primeiroNumero - segundoNumero;
+            } else {
+                resultado = segundoNumero - primeiroNumero;
+            }
         }
 
         System.out.println("O resultado é: " + resultado);
