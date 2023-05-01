@@ -11,6 +11,7 @@ public class Main {
 
         System.out.println("Escolha a operacao matematica que voce deseja realizar?");
         System.out.println("+: Adicao");
+        System.out.println("*: Multipplicação");
         String operacaoMatematica = scanner.next();
 
         System.out.println("Operacao escolhida: " + operacaoMatematica);
@@ -24,6 +25,10 @@ public class Main {
         int resultado = 0;
         if(operacaoMatematica.equals("+")){
          resultado =  primeiroNumero + segundoNumero;
+        }
+
+        if(operacaoMatematica.equals("*")){
+            resultado =  primeiroNumero * segundoNumero;
         }
 
         System.out.println("O resultado é: " + resultado);
